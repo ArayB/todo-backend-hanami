@@ -47,6 +47,9 @@ module Api
       # Defaults to "localhost"
       #
       # host 'example.org'
+      if Hanami.env?(:production)
+        host 'todo-backend-hanami.herokuapp.com'
+      end
 
       # URI port used by the routing system to generate absolute URLs
       # Argument: An object coercible to integer, defaults to 80 if the scheme
@@ -299,8 +302,7 @@ module Api
     # PRODUCTION
     #
     configure :production do
-      scheme 'https'
-      host 'todo-backend-hanami.herokuapp.com'
+      # scheme 'https'
       # port   443
 
       assets do
