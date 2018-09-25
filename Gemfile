@@ -1,10 +1,12 @@
 # frozen_string_literal: true
+ruby '2.4.4'
 
 source 'https://rubygems.org'
 
 gem 'hanami',       '~> 1.2'
 gem 'hanami-model', '~> 1.2'
 gem 'pg'
+gem 'rack-cors', require: 'rack/cors'
 gem 'rake'
 
 group :development do
