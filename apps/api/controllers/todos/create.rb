@@ -17,6 +17,7 @@ module Api::Controllers::Todos
     end
 
     def call(params)
+      Hanami.logger.info "Params: #{params.to_h}"
       # halt 422 unless params.valid?
       result = @interactor.call(params[:todo])
       @todo = result.todo
