@@ -1,1 +1,1 @@
-api: bundle exec hanami server -p $PORT
+web: bundle exec hanami server -p $PORT
