@@ -6,7 +6,9 @@ module Api::Views::Todos
       raw JSON.generate(
         {
           id: todo.id,
-          title: todo.title
+          title: todo.title,
+          completed: todo.completed,
+          url: routes.url(:todo, todo.id)
         }
       )
     end
