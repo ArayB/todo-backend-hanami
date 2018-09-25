@@ -8,7 +8,7 @@ module Api::Views::Todos
             id: todo.id,
             title: todo.title,
             completed: todo.completed,
-            url: routes.url(:todo, todo.id)
+            url: "https://#{Hanami.environment.host}/#{todo.id}"
           }
       )
     end
