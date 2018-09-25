@@ -6,3 +6,4 @@
 post '/', to: 'todos#create'
 get '/', to: 'todos#index'
 delete '/:id', to: 'todos#destroy'
+delete '/', to: 'todos#destroy_all'
