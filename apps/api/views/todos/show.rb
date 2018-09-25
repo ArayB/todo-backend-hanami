@@ -8,7 +8,7 @@ module Api::Views::Todos
             id: todo.id,
             title: todo.title,
             completed: todo.completed,
-            url: routes.path(:todo, todo.id)
+            url: todo.url
           }
       )
     end
