@@ -3,8 +3,12 @@ module Api::Views::Todos
     include Api::View
 
     def render
-      response = { id: todo.id, title: todo.title }
-      raw JSON.generate(response)
+      raw JSON.generate(
+        {
+          id: todo.id,
+          title: todo.title
+        }
+      )
     end
   end
 end
