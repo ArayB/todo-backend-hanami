@@ -1,0 +1,3 @@
+project=todo_backend
+test=rspec
+template=erb

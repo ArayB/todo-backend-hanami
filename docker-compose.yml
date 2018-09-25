@@ -1,0 +1,9 @@
+postgresql:
+  image: postgres:10.4
+  container_name: todo_backend_db
+  ports:
+    - 5432:5432
+  environment:
+    - PGDATA=/postgresql
+  volumes:
+    - ~/docker-data/todo_backend/data/postgresql:/postgresql
