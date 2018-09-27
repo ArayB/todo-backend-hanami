@@ -8,6 +8,7 @@ module Api::Views::Todos
             id: todo.id,
             title: todo.title,
             completed: todo.completed,
+            order: todo.order,
             url: todo.url
           }
       )
