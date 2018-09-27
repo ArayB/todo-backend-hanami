@@ -1,22 +1,18 @@
 module Api::Controllers::Todos
-  class Create
+  class Update
     include Api::Action
 
     expose :todo
 
-    # params do
-    #     required(:title).filled(:str?)
-    # end
-
     def initialize(dependencies = {})
       @interactor = dependencies.fetch(:interactor) do
-        Interactors::Todos::Create.new
+        Interactors::Todos::Update.new
       end
     end
 
     def call(params)
-      # halt 422 unless params.valid?
       result = @interactor.call(params)
+      halt 404 unless result.todo
       @todo = result.todo
     end
   end
