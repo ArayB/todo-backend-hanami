@@ -11,7 +11,7 @@ module Api::Controllers::Todos
     end
 
     def call(params)
-      result = @interactor.call(params)
+      result = @interactor.call(params.raw)
       halt 404 unless result.todo
       @todo = result.todo
     end

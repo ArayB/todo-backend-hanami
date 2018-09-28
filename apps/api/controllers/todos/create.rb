@@ -4,9 +4,11 @@ module Api::Controllers::Todos
 
     expose :todo
 
-    # params do
-    #     required(:title).filled(:str?)
-    # end
+    params do
+      required(:title).filled(:str?)
+      optional(:order).filled(:int?)
+      optional(:completed).filled(:bool?)
+    end
 
     def initialize(dependencies = {})
       @interactor = dependencies.fetch(:interactor) do
@@ -15,8 +17,8 @@ module Api::Controllers::Todos
     end
 
     def call(params)
-      # halt 422 unless params.valid?
-      result = @interactor.call(params)
+      halt 422 unless params.valid?
+      result = @interactor.call(params.raw)
       @todo = result.todo
     end
   end
