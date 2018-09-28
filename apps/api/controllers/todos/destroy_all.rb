@@ -11,7 +11,7 @@ module Api::Controllers::Todos
     end
 
     def call(params)
-      @interactor.call(params[:id])
+      @interactor.call
       self.status = 204
     end
   end

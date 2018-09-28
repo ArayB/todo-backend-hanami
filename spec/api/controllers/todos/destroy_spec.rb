@@ -12,6 +12,11 @@ RSpec.describe Api::Controllers::Todos::Destroy, type: :action do
     expect(response[0]).to eq 204
   end
 
+  it 'calls delete interactor' do
+    expect(interactor).to delete_todo
+    action.call(params)
+  end
+
   private
 
   def delete_todo

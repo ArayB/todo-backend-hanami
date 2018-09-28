@@ -13,7 +13,7 @@ module Interactors
         end
       end
 
-      def call(user_id)
+      def call
         @todo_repo.clear
       end
     end
